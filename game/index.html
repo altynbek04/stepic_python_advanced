@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <style>
+        * {
+            color: #4c4a4a;
+        }
+
+        .hidden {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        .modal {
+            position: absolute;
+            inset: 0;
+            background: white;
+        }
+
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .job {
+            font-size: medium;
+            font-style: italic;
+        }
+    </style>
+    <body>
+        <div>
+            <a href="/">
+                <img src="media/logo.jpg" alt="Логотип" />
+            </a>
+        </div>
+        <h1>Инклюзивные решения - Поиск работы для всех</h1>
+
+        <div>
+            <h2>Меню</h2>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/vacancies">Вакансии</a></li>
+                <li><a href="/about">О компании</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p>
+                Мы создаем равные возможности трудоустройства для людей с
+                ограничениями и помогаем компаниям строить инклюзивные команды!
+            </p>
+
+            <h2>Актуальные вакансии</h2>
+
+            <div>
+                <div>
+                    <h3 class="job">Специалист по доступности</h3>
+                    <span>Подробнее о вакансии</span>
+                    <details>
+                        Тестирование веб-приложений и мобильных приложений на
+                        соответствие стандартам WCAG. Работа с командами
+                        разработки по внедрению принципов универсального
+                        дизайна.Удаленная работа, гибкий график.
+                    </details>
+                </div>
+
+                <div>
+                    <h3 class="job">UX-дизайнер инклюзивных интерфейсов</h3>
+                    <span>Подробнее о вакансии</span>
+                    <details>
+                        Создание пользовательских интерфейсов с учетом
+                        потребностей людей с различными особенностями.
+                        Проведение исследований доступности, создание
+                        инклюзивных дизайн-систем. Возможность работы из офиса с
+                        полной адаптацией рабочего места.
+                    </details>
+                </div>
+
+                <div>
+                    <h3 class="job">Frontend-разработчик</h3>
+                    <span>Подробнее о вакансии</span>
+                    <details>
+                        Разработка веб-приложений с использованием современных
+                        технологий и обязательным соблюдением принципов
+                        доступности. Опыт работы с ARIA, семантической
+                        разметкой. Команда поддерживает использование
+                        ассистивных технологий.
+                    </details>
+                </div>
+            </div>
+
+            <div>
+                <h2>Подать заявку</h2>
+                <button id="apply" onclick="document.querySelector('.modal').classList.remove('hidden');">Откликнуться на вакансию</button>
+            </div>
+        </div>
+
+        <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="heading">
+                <h3 id="modalTitle">Ваш отклик</h3>
+                <button onclick="document.querySelector('#modal').classList.add('hidden')">❌</button>
+            </div>
+            <div>
+                <label for="select">Выберите вакансию</label>
+                <select id="select">
+                    <option>Специалист по доступности</option>
+                    <option>UX-дизайнер инклюзивных интерфейсов</option>
+                    <option>Frontend-разработчик</option>
+                </select>
+
+                <fieldset>
+                    <legend>Предпочитаемый формат работы</legend>
+                    <input id="format1" type="checkbox" checked />
+                    <label for="format1">Удаленно</label>
+                    <input id="format2" type="checkbox" />
+                    <label for="format2">Офис</label>
+                    <input id="format3" type="checkbox" />
+                    <label for="format3">Гибрид</label>
+                </fieldset>
+
+                <div>
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" required />
+                </div>
+
+                <div>
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" required />
+                </div>
+
+                <div>
+                    <label for="experience">Опыт работы (лет)</label>
+                    <input type="number" id="experience" required />
+                </div>
+
+                <div>
+                    <label for="accessibility_needs">Особые потребности для рабочего места </label>
+                    <textarea
+                        id="accessibility_needs"
+                        rows="3"
+                        placeholder="Опишите необходимые адаптации рабочего места, если требуются"
+                    ></textarea>
+                </div>
+
+                <button onclick="alert('Заявка отправлена!')">Подать заявку</button>
+            </div>
+        </div>
+
+        <div>
+            <div>Присоединяйтесь к нашему сообществу инклюзивных работодателей!</div>
+        </div>
+
+        <div>
+            <div>ул. Первомайская, д.1, офис для всех</div>
+            <div>(с) Инклюзивные решения 2025</div>
+        </div>
+    </body>
+</html>
